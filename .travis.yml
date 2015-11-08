@@ -1,0 +1,9 @@
+os: linux
+language: cpp
+compiler: arm-linux-gnueabihf-g++
+
+install:
+  - echo $LANG
+  - sudo apt-get update && sudo apt-get install gcc-4.7-base:armhf
+
+script: make
