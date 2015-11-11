@@ -1,8 +1,22 @@
+sudo: false
+
 os: linux
+
 language: cpp
 
+env:
+  - ARCH=arm
+
+ddons:
+  apt_packages:
+      - lib32bz2-1.0
+      - lib32ncurses5
+      - lib32z1
+        
+
 install:
-  - echo $LANG
-  - sudo apt-get update && sudo apt-get install crossbuild-essential-armhf
+  - wget https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
+  - tar -xf gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
+  - export $PATH=$PATH:gcc-arm-none-eabi-4_9-2015q3/bin
 
 script: make
