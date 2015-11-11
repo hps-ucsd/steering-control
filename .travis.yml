@@ -18,5 +18,9 @@ install:
   - tar -xf gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
   - cd gcc-arm-none-eabi-4_9-2015q3/bin
   - export PATH=$PATH:$PWD
+  - cd ../../
+  - ls
+  - pwd
+  - make
 
 script: make
